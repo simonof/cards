@@ -10,6 +10,7 @@
   const aEl = document.getElementById("a");
   const answerBody = document.getElementById("answer-body");
   const answerImg = document.getElementById("answer-img");
+  const answerLinks = document.getElementById("answer-links");
   const counter = document.getElementById("counter");
   const barfill = document.getElementById("barfill");
   const status = document.getElementById("status");
@@ -56,6 +57,19 @@
     } else {
       answerImg.hidden = true;
       answerImg.innerHTML = "";
+    }
+
+    answerLinks.innerHTML = "";
+    if (Array.isArray(card.links) && card.links.length) {
+      card.links.forEach(function (l) {
+        const a = document.createElement("a");
+        a.href = l.url;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.textContent = l.text;
+        a.className = "link " + (/youtube/i.test(l.url) ? "video" : "book");
+        answerLinks.appendChild(a);
+      });
     }
     setFlipped(false);
     counter.textContent = (idx + 1) + " / " + cards.length;

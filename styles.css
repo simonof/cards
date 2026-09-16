@@ -236,6 +236,32 @@ body {
 .atext-body {
   white-space: pre-wrap;
 }
+.links {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4f46e5;
+  background: rgba(79, 70, 229, 0.08);
+  border: 1px solid rgba(79, 70, 229, 0.25);
+  border-radius: 999px;
+  padding: 7px 12px;
+  text-decoration: none;
+}
+.links a:active {
+  transform: scale(0.97);
+}
+.links a.book { color: #0f766e; background: rgba(15, 118, 110, 0.08); border-color: rgba(13, 148, 136, 0.3); }
+.links a.video { color: #b91c1c; background: rgba(220, 38, 38, 0.08); border-color: rgba(185, 28, 28, 0.3); }
 
 /* Controls */
 .controls {
